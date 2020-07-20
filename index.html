@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Página inicial</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script>
+            function autenticar(){
+                var email = document.getElementById('idEmail').value
+                var senha = document.getElementById('idSenha').value
+  
+                if(email == localStorage.getItem('Email') && senha == localStorage.getItem('Senha')){
+                    alert('Usuário autenticado com sucesso!')
+                    window.location.href = "home.html"
+                    //window.open("home.html");
+                }else{
+                    alert('E-mail ou senha não conferem. Tente novamente!')
+                }
+                //permitir autenticar com vários usuários
+               
+
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <h3>Faça autenticação</h3>
+                    <div class="form-group">
+                        <label>Endereço de e-mail:</label>
+                        <input type="email" class="form-control" id="idEmail" aria-describedby="emailHelp" placeholder="Seu e-mail">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha:</label>
+                        <input type="password" class="form-control" id="idSenha" placeholder="Senha">
+                        <small id="emailHelp" class="form-text text-muted">Não possui cadastro? Clique <a href="cadastro.html">aqui</a> e cadastre-se</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="autenticar()">Autenticar</button>                        
+                </div>
+                <div class="col-3"></div>
+              </div>
+          </div>
+    </body>
+</html>
